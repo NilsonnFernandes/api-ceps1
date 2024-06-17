@@ -1,7 +1,8 @@
 body {
 
+  background-color: #296dbb;
   padding: 0;
-  margin: 0;
+  margin: 0;  
   text-decoration: none;
   display: flex;
   flex-direction: column;

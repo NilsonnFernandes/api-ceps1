@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
+import ImgBrasil from './assets/brasil-postal-codes6.jpg';
 
 export default function App() {
 
@@ -19,30 +20,33 @@ export default function App() {
   }
 
   return (
+    <div>
 
-    <div style={{
-      display: "flex",
-      flexDirection:"column",
-      justifyContent:"center",
-      alignContent:"center",
-      gap: "15px"
-      }}>
-      
-      <h1>Busque seu CEP</h1>
-      <input type="text"  onChange={(e) => setCep(e.target.value)}/>
-      <button type="button" onClick={handleCep}>Buscar</button>
+      <img className="imagem-brasil" height={350} width={440} src={ImgBrasil}/>
 
-      {
-        address && <div>
+      <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignContent:"center",
+        gap: "15px"
+        }}>
 
-            <p>{address.logradouro}</p>
-            <p>{address.bairro}</p>
-            <p>{address.ddd}</p>
+        <h1>Busque seu CEP</h1>
+        <input type="text"  onChange={(e) => setCep(e.target.value)}/>
+        <button type="button" onClick={handleCep}>Buscar</button>
 
-        </div>
-      }
+        {
+          address && <div>
 
+              <p>{address.logradouro}</p>
+              <p>{address.bairro}</p>
+              <p>{address.ddd}</p>
+
+          </div>
+        }
+
+      </div>
     </div>
-
   )
 }
